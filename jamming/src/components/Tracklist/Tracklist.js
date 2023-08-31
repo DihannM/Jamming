@@ -1,11 +1,12 @@
 import React from 'react';
+import "./TrackList.css";
 
-function Tracklist() {
+function TrackList() {
     return (
-        <>
-            <h1>Tracklist</h1>
-        </>
+        <div className="TrackList">
+            
+        </div>
     )
 }
 
-export default Tracklist;
+export default TrackList;
