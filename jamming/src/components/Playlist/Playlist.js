@@ -4,7 +4,7 @@ import './Playlist.css';
 function Playlist() {
     return (
         <div className="Playlist">
-            <input value="New Playlist"/>
+            <input defaultValue={"New Playlist"}/>
             <button class="Playlist-save">SAVE TO SPOTIFY</button>
         </div>
     )
