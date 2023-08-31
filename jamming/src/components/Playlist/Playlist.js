@@ -5,7 +5,7 @@ function Playlist() {
     return (
         <div className="Playlist">
             <input defaultValue={"New Playlist"}/>
-            <button class="Playlist-save">SAVE TO SPOTIFY</button>
+            <button className="Playlist-save">SAVE TO SPOTIFY</button>
         </div>
     )
 }
