@@ -1,12 +1,22 @@
-import React from 'react';
+import React from "react";
+
 import "./TrackList.css";
 
-function TrackList() {
-    return (
-        <div className="TrackList">
-            
-        </div>
-    )
-}
+import Track from "../Track/Track";
+
+const TrackList = (props) => {
+  return (
+    <div className="TrackList">
+      {props.tracks.map((track) => {
+        return (
+          <Track
+            track={track}
+            key={track.id}
+          />
+        );
+      })}
+    </div>
+  );
+};
 
 export default TrackList;
