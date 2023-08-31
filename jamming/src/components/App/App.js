@@ -1,10 +1,55 @@
-import React from "react";
+import React, { useState } from "react";
 import './App.css';
 import SearchBar from "../SearchBar/SearchBar";
 import SearchResults from "../SearchResults/SearchResults";
 import Playlist from "../Playlist/Playlist";
 
-function App() {
+const trackData = [
+  {
+    id: "1",
+    name: "Bow Down",
+    artist: "I Prevail",
+    album: "Trauma"
+  },
+  {
+    id: "2",
+    name: "Hurricane",
+    artist: "I Prevail",
+    album: "Trauma"
+  },
+  {
+    id: "3",
+    name: "Girls Like You",
+    artist: "Maroon 5",
+    album: "Red Pill Blues"
+  }
+];
+
+const App = () => {
+  const [searchResults, setSearchResults] = useState(
+    [
+      {
+        id: "1",
+        name: "Bow Down",
+        artist: "I Prevail",
+        album: "Trauma"
+      },
+      {
+        id: "2",
+        name: "Hurricane",
+        artist: "I Prevail",
+        album: "Trauma"
+      },
+      {
+        id: "3",
+        name: "Girls Like You",
+        artist: "Maroon 5",
+        album: "Red Pill Blues"
+      }
+    ]
+  );
+  console.log(searchResults);
+
   return (
     <div>
       <h1>
@@ -13,7 +58,7 @@ function App() {
       <div className="App">
         <SearchBar />
         <div className="App-playlist">
-          <SearchResults />
+          <SearchResults searchResults={searchResults}/>
           <Playlist />
         </div>
       </div>

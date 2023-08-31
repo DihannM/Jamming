@@ -1,7 +1,7 @@
 import React from 'react';
 import './Playlist.css';
 
-function Playlist() {
+const Playlist = (props) => {
     return (
         <div className="Playlist">
             <input defaultValue={"New Playlist"}/>
