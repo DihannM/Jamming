@@ -1,10 +1,12 @@
 import React from 'react';
+import './Playlist.css';
 
 function Playlist() {
     return (
-        <>
-            <h1>Playlist</h1>
-        </>
+        <div className="Playlist">
+            <input value="New Playlist"/>
+            <button class="Playlist-save">SAVE TO SPOTIFY</button>
+        </div>
     )
 }
 
