@@ -1,12 +1,12 @@
 import React from 'react';
 import './Playlist.css';
-import Tracklist from '../Tracklist/Tracklist';
+import TrackList from '../TrackList/TrackList';
 
 const Playlist = (props) => {
     return (
         <div className="Playlist">
             <input defaultValue={"New Playlist"}/>
-            <Tracklist
+            <TrackList
                 tracks={props.playlistTracks}
             />
             <button className="Playlist-save">SAVE TO SPOTIFY</button>
