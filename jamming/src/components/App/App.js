@@ -95,6 +95,10 @@ const App = () => {
     setPlaylistName(name);
   }, []);
 
+  const savePlaylist = useCallback(() => {
+    const trackUris = playlistTracks.map((track) => track.uri);
+  });
+
 
   return (
     <div>
@@ -113,6 +117,7 @@ const App = () => {
             playlistTracks={playlistTracks}
             onRemove={removeTrack}
             onNameChange={updatePlaylistName}
+            onSave={savePlaylist}
           />
         </div>
       </div>
