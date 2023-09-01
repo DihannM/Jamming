@@ -50,6 +50,31 @@ const App = () => {
   );
   console.log(searchResults);
 
+  const [playlistName, setPlaylistName] = useState("New Playlist");
+
+  const [playlistTracks, setPlaylistTracks] = useState(
+    [
+      {
+        id: "4",
+        name: "Phone",
+        artist: "Meduza",
+        album: "Phone"
+      },
+      {
+        id: "5",
+        name: "Lose Control",
+        artist: "Meduza",
+        album: "Get To know "
+      },
+      {
+        id: "6",
+        name: "OK without you",
+        artist: "Klaas",
+        album: "Collected Part 2"
+      }
+    ]
+  );
+
   return (
     <div>
       <h1>
@@ -59,7 +84,10 @@ const App = () => {
         <SearchBar />
         <div className="App-playlist">
           <SearchResults searchResults={searchResults}/>
-          <Playlist />
+          <Playlist 
+            playlistName={playlistName}
+            playlistTracks={playlistTracks}
+          />
         </div>
       </div>
     </div>
