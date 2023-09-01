@@ -91,6 +91,10 @@ const App = () => {
     );
   }, []);
 
+  const updatePlaylistName = useCallback((name) => {
+    setPlaylistName(name);
+  }, []);
+
 
   return (
     <div>
@@ -108,6 +112,7 @@ const App = () => {
             playlistName={playlistName}
             playlistTracks={playlistTracks}
             onRemove={removeTrack}
+            onNameChange={updatePlaylistName}
           />
         </div>
       </div>
