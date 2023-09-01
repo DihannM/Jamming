@@ -1,12 +1,12 @@
 import React from "react";
 
-import "./TrackList.css";
+import "./Tracklist.css";
 
 import Track from "../Track/Track";
 
-const TrackList = (props) => {
+const Tracklist = (props) => {
   return (
-    <div className="TrackList">
+    <div className="Tracklist">
       {props.tracks.map((track) => {
         return (
           <Track
@@ -22,4 +22,4 @@ const TrackList = (props) => {
   );
 };
 
-export default TrackList;
+export default Tracklist;

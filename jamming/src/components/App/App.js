@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import './App.css';
 import SearchBar from "../SearchBar/SearchBar";
 import SearchResults from "../SearchResults/SearchResults";
@@ -75,6 +75,17 @@ const App = () => {
     ]
   );
 
+  const addTrack = useCallback(
+    (track) => {
+      if (playlistTracks.some((savedTrack) => savedTrack.id === track.id))
+        return;
+
+      setPlaylistTracks((prevTracks) => [...prevTracks, track]);
+    },
+    [playlistTracks]
+  );
+
+
   return (
     <div>
       <h1>
@@ -83,7 +94,7 @@ const App = () => {
       <div className="App">
         <SearchBar />
         <div className="App-playlist">
-          <SearchResults searchResults={searchResults}/>
+          <SearchResults searchResults={searchResults} onAdd={addTrack} />
           <Playlist 
             playlistName={playlistName}
             playlistTracks={playlistTracks}

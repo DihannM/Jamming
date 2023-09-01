@@ -1,7 +1,14 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import "./Track.css";
 
 const Track = (props) => {
+
+    const addTrack = useCallback(
+        (event) => {
+          props.onAdd(props.track);
+        },
+        [props.onAdd, props.track]
+    );
 
     const renderAction = () => {
         if (this.props.isRemoval) {
@@ -12,7 +19,7 @@ const Track = (props) => {
             );
         } else {
             return (
-                <button className="Track-action">
+                <button className="Track-action" onClick={addTrack}>
                     +
                 </button>
             );
