@@ -13,18 +13,19 @@ const App = () => {
 
   const addTrack = useCallback(
     (track) => {
-      if (playlistTracks.some((savedTrack) => savedTrack.id === track.id))
-        return;
-
       setPlaylistTracks((prevTracks) => [...prevTracks, track]);
+      setSearchResults((prevTracks) =>
+        prevTracks.filter((currentTrack) => currentTrack.id !== track.id)
+      );
     },
-    [playlistTracks]
+    [playlistTracks], []
   );
 
   const removeTrack = useCallback((track) => {
     setPlaylistTracks((prevTracks) =>
       prevTracks.filter((currentTrack) => currentTrack.id !== track.id)
     );
+    setSearchResults((prevTracks) => [...prevTracks, track]);
   }, []);
 
   const updatePlaylistName = useCallback((name) => {
